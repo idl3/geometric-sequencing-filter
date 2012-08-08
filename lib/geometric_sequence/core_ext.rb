@@ -66,7 +66,6 @@ end
 String.class_eval do
   def geometric_sequence(pk=nil,e=true)
     v = self.tr('^0-9','').to_i
-    puts v.inspect
     v.geometric_sequence(pk,e)
   end
 end

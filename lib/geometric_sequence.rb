@@ -15,7 +15,7 @@ module GeometricSequence
         @choices = choices.to_g_hash
         return true
       end
-      p "Choices must be an array. e.g ['Choice1', 'Choice2', 'Choice3']"
+      #p "Choices must be an array. e.g ['Choice1', 'Choice2', 'Choice3']"
       false
     end
 
