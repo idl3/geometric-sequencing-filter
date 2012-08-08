@@ -69,9 +69,9 @@ a very simple multiply and add modifier. You need to include the PassKey
 parameter to the method in a String format stating the multiplier value as well
 as addition value (e.g. "*2+43210" )
 
-__ _Warning: Only "*" and "+" are recognized, do not attempt to use "-" and "/" for now, I
+** _Warning: Only "\*" and "+" are recognized, do not attempt to use "-" and "/" for now, I
 will add in better coding to prevent it in future, for now just be nice and
-follow the convention set out._ __
+follow the convention set out._ **
 
 So if you want to get the encrypted value of your selection using the PassKey
 "*2+43210" then run the following code
