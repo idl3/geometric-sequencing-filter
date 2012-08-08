@@ -1,4 +1,5 @@
 Fixnum.class_eval do
+  include GeometricSequence::Helper
   def geometric_sequence(pk=nil,e=true)
     unless pk.nil?
       if e
@@ -34,27 +35,29 @@ Fixnum.class_eval do
   protected
 
   def parse_pk(v,pk,e=true)
-    ms = ""
-    as = ""
-    s = false
-    pk.each_char do |c|
-      if c == "*"
-        s = false
-      elsif c == "+"
-        s = true
+    if check_pk(pk)
+      ms = ""
+      as = ""
+      s = false
+      pk.each_char do |c|
+        if c == "*"
+          s = false
+        elsif c == "+"
+          s = true
+        end
+        if s == false
+          ms += c
+        else
+          as += c
+        end
       end
-      if s == false
-        ms += c
+      m = ms[1..-1].to_i
+      a = as[1..-1].to_i
+      if e
+        return (v-a)/m
       else
-        as += c
+        return v*m+a
       end
-    end
-    m = ms[1..-1].to_i
-    a = as[1..-1].to_i
-    if e
-      return (v-a)/m
-    else
-      return v*m+a
     end
   end
 end
@@ -62,6 +65,7 @@ end
 String.class_eval do
   def geometric_sequence(pk=nil,e=true)
     v = self.tr('^0-9','').to_i
+    puts v.inspect
     v.geometric_sequence(pk,e)
   end
 end

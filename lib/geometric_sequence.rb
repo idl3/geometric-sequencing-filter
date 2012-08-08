@@ -1,7 +1,9 @@
+require 'geometric_sequence/helper'
 require 'geometric_sequence/core_ext'
 
 module GeometricSequence
   class Geometric
+    include GeometricSequence::Helper
     attr_reader :choices, :pk
     def initialize
       @choices = {}
@@ -18,25 +20,10 @@ module GeometricSequence
     end
 
     def set_pk(pk)
-      if pk.class == String
-        re1 = '.*?'
-        re2 = '(\\*)'
-        re3 = '(\\d+)'
-        re4 = '([-+]\\d+)'
-        re = (re1 + re2 + re3 + re4)
-        m = Regexp.new(re,Regexp::IGNORECASE)
-        if m.match(pk)
-          cl = m.match(pk)[1]
-          intl = m.match(pk)[2]
-          signed_intl = m.match(pk)[3]
-          @pk = "#{cl}#{intl}#{signed_intl}"
-          return true
-        else
-          p "PassKey invalid please use the following format '*2+123456'"
-          false
-        end
+      @pk = check_pk(pk)
+      if @pk
+        true
       else
-        p "PassKey must be a valid String"
         false
       end
     end
@@ -53,5 +40,6 @@ module GeometricSequence
       end
       r.reverse
     end
+
   end
 end

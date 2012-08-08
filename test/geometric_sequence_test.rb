@@ -15,26 +15,36 @@ class GeometricSequenceTest < ActiveSupport::TestCase
   end
 
   test "View Geometric object choices" do
-    geometric = GeometricSequence::Geometric.new
-    assert !geometric.set_choices("Omg, This is Cool, Meow")
-    assert geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
+    geo_test_init
+    assert !@geometric.set_choices("Omg, This is Cool, Meow")
+    assert @geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
   end
 
   test "Compare Geometric Sequence with Geometric Object Choices" do
-    geometric = GeometricSequence::Geometric.new
-    geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
-    assert_equal geometric.compare(10), ["Biotechnology","Fine Arts"]
+    geo_test_init
+    @geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
+    assert_equal @geometric.compare(10), ["Biotechnology","Fine Arts"]
   end
 
   test "Compare Geometric Sequence with Geometric Object Choices with PassKey" do
-    geometric = GeometricSequence::Geometric.new
-    geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
-    assert_equal geometric.compare(62252,"*4+62212"), ["Biotechnology","Fine Arts"]
+    geo_test_init
+    @geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
+    assert_equal @geometric.compare(62252,"*4+62212"), ["Biotechnology","Fine Arts"]
   end
 
   test "Set Geometric Object PassKey" do
-    geometric = GeometricSequence::Geometric.new
-    assert geometric.set_pk("*5+62345")
-    assert_equal geometric.pk, "*5+62345"
+    geo_test_init
+    assert @geometric.set_pk("*5+62345")
+    assert_equal @geometric.pk, "*5+62345"
+  end
+
+  test "Compare Geometric Sequence with Geometric Object Choices with Randomized Characters" do
+    geo_test_init
+    @geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
+    assert_equal @geometric.compare("6k2f2j5i2z","*4+62212"),["Biotechnology","Fine Arts"]
+  end
+
+  def geo_test_init
+    @geometric = GeometricSequence::Geometric.new
   end
 end
