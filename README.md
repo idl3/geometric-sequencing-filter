@@ -28,10 +28,10 @@ keys.
 Example:
 --------
 
-5 = Fine Arts & Biotechnology
-7 = Fine Arts, Computer Science & Biotechnology
-10 = Engineering & Computer Science
-9 = Engineering & Biotechnology
+* 5 = Fine Arts & Biotechnology
+* 7 = Fine Arts, Computer Science & Biotechnology
+* 10 = Engineering & Computer Science
+* 9 = Engineering & Biotechnology
 
 Usage
 -----
@@ -43,8 +43,8 @@ Assuming the sum of your choices are 892
 just run the following code
 
 ```ruby
-892.geometric_sequence
- => [512, 256, 64, 32, 16, 8, 4]
+  892.geometric_sequence
+  => [512, 256, 64, 32, 16, 8, 4]
 
 ```
 and you will get an array with the corresponding choices.
@@ -62,13 +62,13 @@ So if you want to get the encrypted value of your selection using the PassKey
 
 To encrypted:
 ```ruby
-    892.geometric_sequence("*2+43210",false)
-    => 44994
+  892.geometric_sequence("*2+43210",false)
+  => 44994
 ```
 To decrypt:
 ```ruby
-    44994.geometric_sequence("*2+43210")
-    => [512, 256, 64, 32, 16, 8, 4]
+  44994.geometric_sequence("*2+43210")
+  => [512, 256, 64, 32, 16, 8, 4]
 ```
 *Tip: just do a .sum if u want the original number back*
 
