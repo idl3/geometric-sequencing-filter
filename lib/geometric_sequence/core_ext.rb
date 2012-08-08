@@ -4,7 +4,7 @@ Fixnum.class_eval do
       if e
         a = parse_pk(self,pk,e)
       else
-        return parse_pk(self,pk,e)
+        return parse_pk(self,pk,e).to_s.each_char.map {|c| c+(('a'..'z').to_a[rand(26)]) }.join
       end
     else
       a = self
@@ -56,6 +56,13 @@ Fixnum.class_eval do
     else
       return v*m+a
     end
+  end
+end
+
+String.class_eval do
+  def geometric_sequence(pk=nil,e=true)
+    v = self.tr('^0-9','').to_i
+    v.geometric_sequence(pk,e)
   end
 end
 
