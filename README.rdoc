@@ -1,11 +1,13 @@
-# Geometric Sequencing Filter
+Geometric Sequencing Filter
+===========================
 
 Geometric Sequencing Filter is a small script made to quickly tabulate a
 collection of choices into a singular number. Similarly it allows you to
 calculate the choices the singular number contains. For example,
 
 
-## Basic Introduction
+Basic Introduction
+------------------
 
 If there was 4 choices,
 1. Biotechnology
@@ -16,22 +18,23 @@ If there was 4 choices,
 And you wished to consolidate all choices into a single field, you would need to
 double up each choice's index to create a geometric sequence table like so
 
-{1 => Biotechnology,
-2 => Computer Science,
-4 => Fine Arts,
-8 => Engineering}
+```ruby
+{ 1: "Biotechnology", 2: "Computer Science", 4: "Fine Arts", 8: "Engineering" }
+```
 
 With the above table, you are able to determine choices by the summation of the
 keys.
 
-### Example:
+Example:
+--------
 
 5 = Fine Arts & Biotechnology
 7 = Fine Arts, Computer Science & Biotechnology
 10 = Engineering & Computer Science
 9 = Engineering & Biotechnology
 
-## Usage
+Usage
+-----
 
 It is easy for you to do the summation of choices by yourself to give you a
 single number.
@@ -44,7 +47,8 @@ just run the following code
 
 and you will get an array with the corresponding choices.
 
-## Security with PassKey
+Security with PassKey
+---------------------
 
 The current implementation allows you to "encrypt" your geometric sequence with
 a very simple multiply and add modifier. You need to include the PassKey
@@ -62,8 +66,9 @@ To decrypt:
     => [512, 256, 64, 32, 16, 8, 4]
 *Tip: just do a .sum if u want the original number back*
 
-# About The Project
-The project is very young and I came up with this idea cause I hated having
+About The Project
+=================
+The project is something casual and I came up with this idea cause I hated having
 multiple parameters in my rails app URL whenever I used a GET request, so with 1 param I can determine
 multiple sorting and filtering options with a single value. Maybe its me but i
 prefer my search url's to be simple. I added the PassKey because sometimes u
