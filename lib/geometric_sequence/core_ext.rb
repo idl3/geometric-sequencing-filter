@@ -1,7 +1,11 @@
 Fixnum.class_eval do
-  def geometric_sequence(pk=nil)
+  def geometric_sequence(pk=nil,e=true)
     unless pk.nil?
-      a = parse_pk(self,pk)
+      if e
+        a = parse_pk(self,pk,e)
+      else
+        return parse_pk(self,pk,e)
+      end
     else
       a = self
     end
