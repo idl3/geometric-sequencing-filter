@@ -58,3 +58,11 @@ Fixnum.class_eval do
     end
   end
 end
+
+Array.class_eval do
+  def to_g_hash
+    b = []
+    self.each_index{ |x| b << 2**(x+1); b << self[x] }
+    return Hash[*b]
+  end
+end
