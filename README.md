@@ -9,11 +9,11 @@ calculate the choices the singular number contains. For example,
 Basic Introduction
 ------------------
 
-If there was 4 choices,
-1. Biotechnology
-2. Computer Science
-3. Fine Arts
-4. Engineering
+If there was 4 choices,  
+1. Biotechnology  
+2. Computer Science  
+3. Fine Arts  
+4. Engineering  
 
 And you wished to consolidate all choices into a single field, you would need to
 double up each choice's index to create a geometric sequence table like so
@@ -28,10 +28,10 @@ keys.
 Example:
 --------
 
-* 5 = Fine Arts & Biotechnology
-* 7 = Fine Arts, Computer Science & Biotechnology
-* 10 = Engineering & Computer Science
-* 9 = Engineering & Biotechnology
+5 = Fine Arts & Biotechnology  
+7 = Fine Arts, Computer Science & Biotechnology  
+10 = Engineering & Computer Science  
+9 = Engineering & Biotechnology  
 
 Usage
 -----
@@ -42,19 +42,17 @@ point it to this repository like so
 ```ruby
   gem 'geometric-sequence-filter', git: "git://github.com/idl3/geometric-sequencing-filter.git"
 ```
-run a bundle install after adding it in.
-
+run a bundle install after adding it in.  
+  
 To test it out, go to your rails console and type:
-
 ```ruby
   require 'geometric_sequence'
 ```
 
 It is easy for you to do the summation of choices by yourself to give you a
-single number.
-
-Assuming the sum of your choices are 892
-just run the following code
+single number.  
+  
+Assuming the sum of your choices are 892, just run the following code
 
 ```ruby
   892.geometric_sequence
