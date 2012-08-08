@@ -36,6 +36,20 @@ Example:
 Usage
 -----
 
+To install, its easy, just add 'geometric-sequence-filter' to your gemfile and
+point it to this repository like so
+
+```ruby
+  gem 'geometric-sequence-filter', git: "git://github.com/idl3/geometric-sequencing-filter.git"
+```
+run a bundle install after adding it in.
+
+To test it out, go to your rails console and type:
+
+```ruby
+  require 'geometric_sequence'
+```
+
 It is easy for you to do the summation of choices by yourself to give you a
 single number.
 
@@ -57,6 +71,10 @@ a very simple multiply and add modifier. You need to include the PassKey
 parameter to the method in a String format stating the multiplier value as well
 as addition value (e.g. "*2+43210" )
 
+*Warning: Only "*" and "+" are recognized, do not attempt to use "-" and "/" for now, I
+will add in better coding to prevent it in future, for now just be nice and
+follow the convention set out.*
+
 So if you want to get the encrypted value of your selection using the PassKey
 "*2+43210" then run the following code
 
@@ -71,6 +89,13 @@ To decrypt:
   => [512, 256, 64, 32, 16, 8, 4]
 ```
 *Tip: just do a .sum if u want the original number back*
+
+TODO:
+=====
+I will be adding the actual filtering configuration.
+* To accept a hash list and store for reference
+* To match sequenced results to the hash and return choice results as text
+* To create a view helper for search form implementations
 
 About The Project
 =================
