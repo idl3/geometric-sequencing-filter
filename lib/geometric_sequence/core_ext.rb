@@ -10,8 +10,9 @@ Fixnum.class_eval do
     else
       a = self
     end
-    if a > 2
-      c, h = 1, 0; b ||= 2
+    b ||= 2
+    if a >= 2
+      c, h = 1, 0
       while (a - b) >= 0
         c += 1; b = b * 2; h = b
       end
@@ -28,7 +29,7 @@ Fixnum.class_eval do
       return b
     else
       p "Please supply a value greater than 1"
-      return 1
+      return 2
     end
   end
 
