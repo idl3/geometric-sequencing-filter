@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    geometric (0.0.1)
+    geometric-sequence-filter (0.0.1)
       rails (~> 3.2.7)
 
 GEM
@@ -40,9 +40,6 @@ GEM
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
-    jquery-rails (2.0.2)
-      railties (>= 3.2.0, < 5.0)
-      thor (~> 0.14)
     json (1.7.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -92,6 +89,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  geometric!
-  jquery-rails
+  geometric-sequence-filter!
   sqlite3
