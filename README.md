@@ -42,9 +42,11 @@ single number.
 Assuming the sum of your choices are 892
 just run the following code
 
-    892.geometric_sequence
-    => [512, 256, 64, 32, 16, 8, 4]
+```ruby
+892.geometric_sequence
+ => [512, 256, 64, 32, 16, 8, 4]
 
+```
 and you will get an array with the corresponding choices.
 
 Security with PassKey
@@ -59,11 +61,15 @@ So if you want to get the encrypted value of your selection using the PassKey
 "*2+43210" then run the following code
 
 To encrypted:
+```ruby
     892.geometric_sequence("*2+43210",false)
     => 44994
+```
 To decrypt:
+```ruby
     44994.geometric_sequence("*2+43210")
     => [512, 256, 64, 32, 16, 8, 4]
+```
 *Tip: just do a .sum if u want the original number back*
 
 About The Project
