@@ -17,9 +17,7 @@ class GeometricSequenceTest < ActiveSupport::TestCase
   test "View Geometric object choices" do
     geometric = GeometricSequence::Geometric.new
     assert !geometric.set_choices("Omg, This is Cool, Meow")
-    p geometric.choices
     assert geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
-    p geometric.choices
   end
 
   test "Compare Geometric Sequence with Geometric Object Choices" do
@@ -32,5 +30,11 @@ class GeometricSequenceTest < ActiveSupport::TestCase
     geometric = GeometricSequence::Geometric.new
     geometric.set_choices(["Biotechnology", "Computer Science", "Fine Arts", "Engineering"])
     assert_equal geometric.compare(62252,"*4+62212"), ["Biotechnology","Fine Arts"]
+  end
+
+  test "Set Geometric Object PassKey" do
+    geometric = GeometricSequence::Geometric.new
+    assert geometric.set_pk("*5+62345")
+    assert_equal geometric.pk, "*5+62345"
   end
 end
